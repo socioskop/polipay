@@ -33,12 +33,12 @@ app_module_ui <- function(
 
   head <- shinydashboard::dashboardHeader(
     title = "Payments",
-    left_menu = tagList(
-      shiny::actionLink(
-        ns("go_to_shiny_app"),
-        paste0("Go to ", app_name),
-        style = "margin-left: -15px; margin-top: -7.5px; color: #1a8dc7; font-size: 18px;"
-      )
+    left_menu = tags$li(class="dropdown",
+                        shiny::actionLink(
+                          ns("go_to_shiny_app"),
+                          paste0("Go to ", app_name),
+                          style = "margin-left: -15px; margin-top: -7.5px; color: #1a8dc7; font-size: 18px;"
+                        )
     ),
     polished::profile_module_ui(ns("profile"))
   )
